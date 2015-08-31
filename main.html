@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Thesis List</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+</head>
+<body>
+<div class='main'>
+    <h4><a href="{{logout_url}}">Logout</a></h3>
+    <h1>New Thesis Entry</h1>
+    <div class='form-section'>
+        <!-- your form here -->
+        <form class = 'create-form'>
+            <select name="year">
+                <option>Year</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+            </select>
+            <input type="text" name="thesis_title" placeholder = "Title">
+            <input type="text" style="height:150px; width:400px" name="abstract" placeholder ="Abstract">
+            <input type="text" name="adviser" placeholder ="Adviser">
+            <select name="section" style="padding:5px; margin-top:5px">
+                <option>Section</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <input type="submit" value="Submit"></input>
+        </form>
+    </div>
+    <div class='list-section'>
+        <!-- your list here -->
+        <h3>Thesis List</h3>
+        <ul class='thesis-list'>
+        </ul> 
+    </div>
+</div>
+
+
+<script type="text/javascript" src='/static/script.js'></script>
+</body>
+</html>
