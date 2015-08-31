@@ -25,9 +25,9 @@ class Thesis(ndb.Model):
 
 class User(ndb.Model):
     email = ndb.StringProperty(indexed=True)
-    phone_number = ndb.IntegerProperty()
-    first_name = ndb.StringProperty()
-    last_name = ndb.StringProperty()
+    phone_number = ndb.StringProperty(indexed=True)
+    first_name = ndb.StringProperty(indexed=True)
+    last_name = ndb.StringProperty(indexed=True)
     created_date = ndb.DateTimeProperty(auto_now_add=True)
 
 class LoginHandler(webapp2.RequestHandler):
@@ -77,8 +77,8 @@ class RegisterPageHandler(webapp2.RequestHandler):
         registered_user = User()
         registered_user.first_name =self.request.get('first_name')
         registered_user.last_name = self.request.get('last_name')
-        registered_user.email = self.register.get('email')
-        registered_user.phone_number = self.get('phone_number')
+        registered_user.email = self.request.get('email')
+        registered_user.phone_number = self.request.get('phone_number')
         registered_user.put()
         self.redirect('/home')
         #loggedin_user = users.get_current_user()
